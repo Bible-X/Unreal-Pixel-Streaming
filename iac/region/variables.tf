@@ -30,13 +30,13 @@ variable "fps" {
 
 #Number of Virtual Machine Scale Set nodes scaled out on the VMSS cluster (1 stream per GPU VM by default)
 variable "vmss_start_instances" {
-  default = 1
+  default = 2
 }
 
 #How many instances per node you want to run on each GPU (test with lower FPS and resolution to squeeze more on)
 #Try to test manually on a single GPU VM in Azure to validate if more than 1 3D instance can even run for your app. (check GPU/CPU/Mem)
 variable "instancesPerNode" {
-  default = 1
+  default = 2
 }
 
 #The default port that Unreal uses to talk to the 3D app from the Signaling Server (WebRTC streaming service)
