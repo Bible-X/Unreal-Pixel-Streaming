@@ -30,13 +30,13 @@ variable "fps" {
 
 #Number of Virtual Machine Scale Set nodes scaled out on the VMSS cluster (1 stream per GPU VM by default)
 variable "vmss_start_instances" {
-  default = 2
+  default = 1
 }
 
 #How many instances per node you want to run on each GPU (test with lower FPS and resolution to squeeze more on)
 #Try to test manually on a single GPU VM in Azure to validate if more than 1 3D instance can even run for your app. (check GPU/CPU/Mem)
 variable "instancesPerNode" {
-  default = 2
+  default = 1
 }
 
 #The default port that Unreal uses to talk to the 3D app from the Signaling Server (WebRTC streaming service)
@@ -63,7 +63,7 @@ variable "matchmaker_vm_storage_account_type" {
 #but increase your quota in your Azure portal for NV12s_v3's and use those below as they have a newer, more 
 #powerful CPU for similar price. NV6 was the default chosen below to avoid quota errors when using this for the first time.
 variable "vmss_size" {
-  default = "Standard_D4ds_v4"
+  default = "Standard_NV4as_v4"
   #default = "Standard_NV6"
   #default = "Standard_NV12s_v3"
 }

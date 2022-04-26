@@ -44,7 +44,8 @@ resource "random_string" "admin_password" {
 }
 
 locals {
-  safePWD               = random_string.admin_password.result
+  #safePWD               = random_string.admin_password.result
+  safePWD               = "Biblex123456789"
   ip_configuration_name = format("%s-mm-config", var.base_name)
   vmss_name             = format("%s%s", substr(var.base_name, 0, 5), "vmss")
 
